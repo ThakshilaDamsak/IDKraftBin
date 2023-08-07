@@ -13,7 +13,7 @@ This is a Personal customization of <a href="https://userstyles.world/user/Neigh
 #
 <p align="center">
 <i>
-If you want the full experience of the userstyle install the original NeighborlyFedora's userstyle.
+If you want the full experience of this userstyle, install the original NeighborlyFedora's userstyle.
 </i>
  </p>
 <p align="center">
