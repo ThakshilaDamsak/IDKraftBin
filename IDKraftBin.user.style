@@ -13,22 +13,13 @@
 @var number minImageWidth  "Min Image Preview Width (px)"  ["px",250]
 
 @var checkbox magIconStretch "Stretch Magazine Icon" 0
-@var number magIconHeight "Magazine Icon Height (px)" ["px",150]
-@var number magIconWidth  "Magazine Icon Width (px)"  ["px",150]
+@var number magIconHeight "Magazine Icon Height (px)" ["px",300]
+@var number magIconWidth  "Magazine Icon Width (px)"  ["px",300]
 
-@var checkbox thumbnailsOnLeft     "Thumbnails on Left"      1
+@var checkbox thumbnailsOnLeft     "Thumbnails on Left"      0
 @var checkbox boldAllMagazineNames "Bold All Magazine Names" 1
 
 @var checkbox headerIconText "Text for Search and Post Buttons" 1 
-
-@var color upvoteColor         "Clicked Upvote Color"         "#33c92e"
-@var color upvoteHoverColor    "Clicked Upvote Hover Color"   "#1a9c59"
-@var color downvoteColor       "Clicked Downvote Color"       "#de0b2b"
-@var color downvoteHoverColor  "Clicked Downvote Hover Color" "#ad0303"
-@var color boostColor          "Clicked Boost Color"          "#ffbf00"
-@var color boostHoverColor     "Clicked Boost Hover Color"    "#d18800"
-@var color activeVoteTextColor "Clicked Vote Text Color"      "#ffffff"
-
 
 @var checkbox highlightPins "Highlight Pinned Posts" 1
 @var color pinColor         "Pinned Post Color"      "#c869e2"
@@ -453,6 +444,16 @@
         }
     }
     
-    
+    /*
+
+	@var color upvoteColor         "Clicked Upvote Color"         "#33c92e"
+	@var color upvoteHoverColor    "Clicked Upvote Hover Color"   "#1a9c59"
+	@var color downvoteColor       "Clicked Downvote Color"       "#de0b2b"
+	@var color downvoteHoverColor  "Clicked Downvote Hover Color" "#ad0303"
+	@var color boostColor          "Clicked Boost Color"          "#ffbf00"
+	@var color boostHoverColor     "Clicked Boost Hover Color"    "#d18800"
+	@var color activeVoteTextColor "Clicked Vote Text Color"      "#ffffff"
+
+	*/
     
 }
