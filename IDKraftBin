@@ -1,0 +1,458 @@
+/* ==UserStyle==
+
+@name           IDKraftBin
+@namespace      github.com/openstyles/stylus
+@version        1.2.2
+@description    A few small visual improvements for kbin.
+@author         NeighborlyFedora
+
+@preprocessor stylus
+
+@var checkbox darkImageBg  "Darker Image Preview Background" 1
+@var number maxImageHeight "Max Image Preview Height (px)" ["px",400]
+@var number minImageWidth  "Min Image Preview Width (px)"  ["px",250]
+
+@var checkbox magIconStretch "Stretch Magazine Icon" 0
+@var number magIconHeight "Magazine Icon Height (px)" ["px",150]
+@var number magIconWidth  "Magazine Icon Width (px)"  ["px",150]
+
+@var checkbox thumbnailsOnLeft     "Thumbnails on Left"      1
+@var checkbox boldAllMagazineNames "Bold All Magazine Names" 1
+
+@var checkbox headerIconText "Text for Search and Post Buttons" 1 
+
+@var color upvoteColor         "Clicked Upvote Color"         "#33c92e"
+@var color upvoteHoverColor    "Clicked Upvote Hover Color"   "#1a9c59"
+@var color downvoteColor       "Clicked Downvote Color"       "#de0b2b"
+@var color downvoteHoverColor  "Clicked Downvote Hover Color" "#ad0303"
+@var color boostColor          "Clicked Boost Color"          "#ffbf00"
+@var color boostHoverColor     "Clicked Boost Hover Color"    "#d18800"
+@var color activeVoteTextColor "Clicked Vote Text Color"      "#ffffff"
+
+
+@var checkbox highlightPins "Highlight Pinned Posts" 1
+@var color pinColor         "Pinned Post Color"      "#c869e2"
+
+@var checkbox colorHeaderMagazineName  "Color Header Magazine Name"  1
+@var checkbox colorInlineMagazineNames "Color Inline Magazine Names" 0
+@var checkbox colorSidebarMagazineName "Color Sidebar Magazine Name" 1
+@var color magazineColor               "Magazine Name Color"         "#c869e2"
+@var color magazineHoverColor          "Magazine Name Hover Color"   "#9844fc"
+
+@var checkbox colorOwnUsername   "Color Username in Your Posts" 1
+@var color ownUsernameColor      "Your Username Color"         "#ffbf00"
+@var color ownUsernameHoverColor "Your Username Hover Color"   "#d18800"
+
+@var checkbox colorOpUsername   "Color OP Username" 1
+@var color opUsernameColor      "Username OP Color"         "#c869e2"
+@var color opUsernameHoverColor "Username OP Hover Color"   "#9844fc"
+
+@var checkbox colorSubscribe   "Color Clicked Subscribe Button"       1
+@var color subscribeColor      "Clicked Subscribe Color"       "#c869e2"
+@var color subscribeHoverColor "Clicked Subscribe Hover Color" "#9844fc"
+@var color subscribeTextColor  "Clicked Subscribe Text Color"  "#ffffff"
+
+@var checkbox colorBlock   "Color Clicked Block Button"       1
+@var color blockColor      "Clicked Block Color"       "#de0b2b"
+@var color blockHoverColor "Clicked Block Hover Color" "#ad0303"
+@var color blockIconColor  "Clicked Block Icon Color"  "#ffffff"
+
+==/UserStyle== */
+
+
+
+@-moz-document domain("kbin.social") {
+    
+    
+    
+    :root {
+        
+        --max-image-height: maxImageHeight;
+        --min-image-width: minImageWidth;
+        
+        --mag-icon-height: magIconHeight;
+        --mag-icon-width: magIconWidth;
+        
+        --upvote-color: upvoteColor;
+        --upvote-hover-color: upvoteHoverColor;
+        --downvote-color: downvoteColor;
+        --downvote-hover-color: downvoteHoverColor;
+        --boost-color: boostColor;
+        --boost-hover-color: boostHoverColor;
+        --active-vote-text-color: activeVoteTextColor;
+        
+        --pin-color: pinColor;
+        
+        --magazine-color: magazineColor;
+        --magazine-hover-color: magazineHoverColor;
+        
+        --own-username-color: ownUsernameColor;
+        --own-username-hover-color: ownUsernameHoverColor;
+        
+        --op-username-color: opUsernameColor;
+        --op-username-hover-color: opUsernameHoverColor;
+        
+        --subscribe-color: subscribeColor;
+        --subscribe-hover-color: subscribeHoverColor;
+        --subscribe-text-color: subscribeTextColor;
+        
+        --block-color: blockColor;
+        --block-hover-color: blockHoverColor;
+        --block-icon-color: blockIconColor;
+        
+        --image-bg-color: #f2f6f7;
+        
+        
+    }
+    
+    .theme--kbin {
+        --image-bg-color: #2d2f33
+
+    }
+    
+    .theme--dark {
+        --image-bg-color: #202020
+    }
+    
+    .theme--solarized-light {
+        --image-bg-color: #f2ead5
+    }
+    
+    .theme--solarized-dark {
+        --image-bg-color: #002129
+    }
+    
+    .theme--tokyo-night {
+        --image-bg-color: #232333
+    }
+    
+    
+    
+    /* compacting magazine sidebar */
+    
+    #sidebar .magazine .row figure img {
+        width: var(--mag-icon-width);
+        height: var(--mag-icon-height);
+        if(magIconStretch){
+            object-fit: fill;
+        }else{
+            object-fit: cover;
+        }
+        
+    }
+    
+    .magazine__subscribe {
+        margin-bottom: 1rem;
+    }
+
+    
+    
+    /* magazine name recolor */
+
+    if(colorHeaderMagazineName){
+    
+        .head-title span, .head-title a {
+            color: var(--magazine-color) !important;
+        }
+
+        .head-title:hover span, .head-title:hover a{
+            color: var(--magazine-hover-color) !important;
+        }
+        
+    }
+    
+    if(colorInlineMagazineNames){
+        
+        a.magazine-inline {
+            color: var(--magazine-color) !important;
+        }
+        
+        a.magazine-inline:hover {
+            color: var(--magazine-hover-color) !important;
+        }
+        
+    }
+    
+    if(colorSidebarMagazineName){
+        
+        #sidebar .magazine h4 a, #sidebar .magazine p.magazine__name {
+            color: var(--magazine-color) !important;
+        }
+        
+        #sidebar .magazine h4 a:hover {
+            color: var(--magazine-hover-color) !important;
+        }
+        
+    }
+    
+    
+    
+    /* OP username color */
+
+    if(colorOpUsername){
+        
+        .subject.author {
+            border: var(--kbin-section-border);
+        }
+        
+        .subject.author > header > a.user-inline, .subject.author > .meta a.user-inline {
+            color: var(--op-username-color);
+        }
+        
+        .subject.author > header > a.user-inline:hover, .subject.author > .meta a.user-inline:hover  {
+            color: var(--op-username-hover-color);
+        }
+        
+    }
+    
+    
+    
+    /* own username color */
+
+    if(colorOwnUsername){
+        
+        .subject.own {
+            border: var(--kbin-section-border);
+        }
+        
+        .subject.own > header > a.user-inline, .subject.own > .meta a.user-inline {
+            color: var(--own-username-color);
+        }
+        
+        .subject.own > header > a.user-inline:hover, .subject.own > .meta a.user-inline:hover  {
+            color: var(--own-username-hover-color);
+        }
+        
+    }
+    
+    
+    
+    /* subscribe button recolor */
+    
+    if(colorSubscribe){
+        
+        .magazine__subscribe form[name="magazine_subscribe"] .btn.active {
+            background-color: var(--subscribe-color);
+            color: var(--subscribe-text-color) !important;
+            border: none;
+        }
+        
+        .magazine__subscribe form[name="magazine_subscribe"] .btn.active:hover {
+            background-color: var(--subscribe-hover-color);
+        }
+        
+    }
+    
+    
+    
+    /* block button recolor */
+    
+    if(colorBlock){
+        
+        .magazine__subscribe form[name="magazine_block"] .btn.active {
+            background-color: var(--block-color);
+            border: none;
+        }
+        
+        .magazine__subscribe form[name="magazine_block"] .btn.active i {
+            color: var(--block-icon-color);
+        }
+        
+        .magazine__subscribe form[name="magazine_block"] .btn.active:hover {
+            background-color: var(--block-hover-color);
+        }
+        
+    }
+    
+    
+    
+    /* bold magazine names */
+
+    if(boldAllMagazineNames){
+        
+        .head-title span, .head-title a, a.magazine-inline {
+            font-weight: bold !important;
+        }
+        
+    }
+    
+    
+    
+    /* hover fade */
+    
+    button, a, span {
+        transition-duration: 0.3s;
+    }
+    
+    
+    
+    /* boost recolor */
+    
+    footer menu > li form button.stretched-link.active {
+        color: var(--boost-color);
+        text-decoration: none;
+    }
+    
+    footer menu > li form button.stretched-link.active:hover {
+        color: var(--boost-hover-color);
+    }
+    
+    
+    
+    /* vote recolors 
+    
+    .vote .active.vote__up button {
+        background-color: var(--upvote-color) ;
+        color: var(--active-vote-text-color) !important;
+    }
+    
+    .vote .active.vote__up button:hover {
+        background-color: var(--upvote-hover-color);
+    }
+    
+    .vote .active.vote__down button {
+        background-color: var(--downvote-color);
+        color: var(--active-vote-text-color) !important;
+    }
+    
+    .vote .active.vote__down button:hover {
+        background-color: var(--downvote-hover-color);
+    } 
+*/
+    
+    
+    
+    /* moving thumbnail to left */
+    
+    if(thumbnailsOnLeft){
+        
+        .entry:not(.no-image) {
+            display: grid;
+            grid-template-areas: "vote image title" "vote image shortDesc" "vote image meta" "vote image footer" "body body body" !important;
+            grid-template-columns: min-content min-content auto;
+        }
+        
+    }
+    
+    
+    
+    /* pin highlight */
+    
+    if(highlightPins){
+        
+        i.fa-thumbtack {
+            color: var(--pin-color);
+        }
+        
+        .entry:has(i.fa-thumbtack){
+            border: solid var(--pin-color) !important;
+            border-width: 0.5rem 0.1rem 0.1rem 0.1rem !important;
+        }
+
+        .entry:has(i.fa-thumbtack) + div.js-container > div.preview {
+            border: .1rem solid var(--pin-color);
+            border-top: none;
+        }
+        
+    }
+    
+    
+    
+    
+    
+    /* image stuff */
+    
+    .entry:has(+ div.js-container ){
+        border-bottom: none !important;
+    }
+    
+    .rounded-edges .entry:has(+ div.js-container ){
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    
+    div.js-container {
+        margin-bottom: 0.5rem;
+    }
+    
+    div.preview {
+        if(darkImageBg){
+            background-color: var(--image-bg-color) !important;
+        }
+    }
+    
+    div.preview img, .comment footer figure img {
+        display: block;
+        max-height: var(--max-image-height);
+        min-width: var(--min-image-width);
+        object-fit: contain;
+        margin: auto !important;
+    }
+    
+    .rounded-edges div.preview :is(img,iframe) {
+        border-radius: 0 !important;
+    }
+    
+    .rounded-edges :is(.comment, .section--top) div.preview {
+        border-radius: 0.5rem;
+    }
+    
+    
+    div.preview iframe{
+        display: block;
+        object-fit: contain;
+        margin: auto !important;
+    }
+    
+    .entry + div.js-container > div.preview{
+        background-color: var(--kbin-section-bg);
+        border: var(--kbin-section-border) !important;
+        border-top: none !important;
+        margin-top: -0.5rem;
+    }
+    
+    .rounded-edges .entry + div.js-container > div.preview{
+        border-bottom-left-radius: 0.5rem !important;
+        border-bottom-right-radius: 0.5rem !important;
+    }
+    
+    .rounded-edges .view-compact .entry .no-image-placeholder, .rounded-edges .view-compact .entry figure {
+        border-radius: 0 !important
+    }
+    
+    
+    
+    
+    /* adding text to header buttons */
+    
+    if(headerIconText){
+        #header > .kbin-container .icon:has( :is(.fa-magnifying-glass,.fa-plus,.fa-list) ) {
+            font-size: 0 !important;
+        }
+        
+        #header > .kbin-container :is(.fa-magnifying-glass,.fa-plus,.fa-list) {
+            margin-right: 0.2rem;
+            margin-top: 0.1rem;
+        }
+        
+        #header > .kbin-container .icon:has( :is(.fa-magnifying-glass,.fa-plus,.fa-list) ):after {
+            font-size: 0.85rem;
+            margin-bottom: 0.1rem;
+        }
+        
+        #header > .kbin-container .icon:has(.fa-list):after {
+            content: 
+        }
+
+        #header > .kbin-container .icon:has(.fa-magnifying-glass):after {
+            content: " Search ";
+        }
+
+        #header > .kbin-container .icon:has(.fa-plus):after {
+            content: " Post ";
+        }
+    }
+    
+    
+    
+}
