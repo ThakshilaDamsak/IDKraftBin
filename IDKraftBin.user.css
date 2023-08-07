@@ -2,24 +2,34 @@
 
 @name           IDKraftBin
 @namespace      github.com/openstyles/stylus
-@version        1.2.2
+@version        1.3-1.2.2
 @description    A few small visual improvements for kbin.
 @author         NeighborlyFedora
 
 @preprocessor stylus
 
 @var checkbox darkImageBg  "Darker Image Preview Background" 1
+
+@var checkbox imageHeightControl  "Custom Image Preview Area" 0
+
 @var number maxImageHeight "Max Image Preview Height (px)" ["px",400]
 @var number minImageWidth  "Min Image Preview Width (px)"  ["px",250]
 
-@var checkbox magIconStretch "Stretch Magazine Icon" 0
-@var number magIconHeight "Magazine Icon Height (px)" ["px",300]
 @var number magIconWidth  "Magazine Icon Width (px)"  ["px",300]
 
-@var checkbox thumbnailsOnLeft     "Thumbnails on Left"      0
 @var checkbox boldAllMagazineNames "Bold All Magazine Names" 1
 
 @var checkbox headerIconText "Text for Search and Post Buttons" 1 
+
+@var checkbox voteRecolors "Change Vote Button Colors" 0
+
+@var color upvoteColor         "Clicked Upvote Color"         "#33c92e"
+@var color upvoteHoverColor    "Clicked Upvote Hover Color"   "#1a9c59"
+@var color downvoteColor       "Clicked Downvote Color"       "#de0b2b"
+@var color downvoteHoverColor  "Clicked Downvote Hover Color" "#ad0303"
+@var color boostColor          "Clicked Boost Color"          "#ffbf00"
+@var color boostHoverColor     "Clicked Boost Hover Color"    "#d18800"
+@var color activeVoteTextColor "Clicked Vote Text Color"      "#ffffff"
 
 @var checkbox highlightPins "Highlight Pinned Posts" 1
 @var color pinColor         "Pinned Post Color"      "#c869e2"
@@ -123,13 +133,7 @@
     
     #sidebar .magazine .row figure img {
         width: var(--mag-icon-width);
-        height: var(--mag-icon-height);
-        if(magIconStretch){
-            object-fit: fill;
-        }else{
-            object-fit: cover;
-        }
-        
+        height: auto;     
     }
     
     .magazine__subscribe {
@@ -290,8 +294,8 @@
     
     
     
-    /* vote recolors 
-    
+    /* vote recolors */
+if(voteRecolors)   {  
     .vote .active.vote__up button {
         background-color: var(--upvote-color) ;
         color: var(--active-vote-text-color) !important;
@@ -308,24 +312,9 @@
     
     .vote .active.vote__down button:hover {
         background-color: var(--downvote-hover-color);
-    } 
-*/
-    
-    
-    
-    /* moving thumbnail to left */
-    
-    if(thumbnailsOnLeft){
-        
-        .entry:not(.no-image) {
-            display: grid;
-            grid-template-areas: "vote image title" "vote image shortDesc" "vote image meta" "vote image footer" "body body body" !important;
-            grid-template-columns: min-content min-content auto;
-        }
-        
     }
     
-    
+    }
     
     /* pin highlight */
     
@@ -353,6 +342,8 @@
     
     /* image stuff */
     
+	 if(imageHeightControl){
+		 
     .entry:has(+ div.js-container ){
         border-bottom: none !important;
     }
@@ -379,6 +370,7 @@
         object-fit: contain;
         margin: auto !important;
     }
+	
     
     .rounded-edges div.preview :is(img,iframe) {
         border-radius: 0 !important;
@@ -410,6 +402,7 @@
     .rounded-edges .view-compact .entry .no-image-placeholder, .rounded-edges .view-compact .entry figure {
         border-radius: 0 !important
     }
+	}
     
     
     
@@ -443,17 +436,5 @@
             content: " Post ";
         }
     }
-    
-    /*
-
-	@var color upvoteColor         "Clicked Upvote Color"         "#33c92e"
-	@var color upvoteHoverColor    "Clicked Upvote Hover Color"   "#1a9c59"
-	@var color downvoteColor       "Clicked Downvote Color"       "#de0b2b"
-	@var color downvoteHoverColor  "Clicked Downvote Hover Color" "#ad0303"
-	@var color boostColor          "Clicked Boost Color"          "#ffbf00"
-	@var color boostHoverColor     "Clicked Boost Hover Color"    "#d18800"
-	@var color activeVoteTextColor "Clicked Vote Text Color"      "#ffffff"
-
-	*/
     
 }
