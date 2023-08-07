@@ -6,6 +6,6 @@ This is a Personal customization of <a href="https://userstyles.world/user/Neigh
 </p>
 <p align="center">
   <a href="https://userstyles.world/api/style/11353.user.css">
-    <img alt="Install directly with Stylus" src="https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg"/>
+    <img alt="Install directly with Stylus" src="https://raw.githubusercontent.com/ThakshilaDamsak/IDKraftBin/main/IDKraftBin.user.style?token=GHSAT0AAAAAACFIHFHCKPX73GYUOEB3MXZWZGQNR7Q"/>
   </a>
   </p>
