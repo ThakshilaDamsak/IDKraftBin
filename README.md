@@ -9,3 +9,15 @@ This is a Personal customization of <a href="https://userstyles.world/user/Neigh
     <img alt="Install directly with Stylus" src="https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg"/>
   </a>
   </p>
+
+#
+<p align="center">
+<i>
+If you want the full experience of the userstyle install the original NeighborlyFedora's userstyle.
+</i>
+ </p>
+<p align="center">
+    <a href="https://userstyles.world/style/10478/idkbin">
+    <img alt="Install the original userstyle from userstyles.world" src="https://img.shields.io/badge/Install%20the%20original%20userstyle%20from-userstyles.world-00adad.svg"/>
+  </a>
+  </p>
