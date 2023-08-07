@@ -1,8 +1,11 @@
 <h1 align="center">
  IDKraftBin
 </h1>
+<h4 align="center">
+A customization of <a href="https://userstyles.world/user/NeighborlyFedora">NeighborlyFedora</a>'s  <a href="https://userstyles.world/style/10478/idkbin">Idkbin</a> userstyle for make it compatible with <a href="https://github.com/ThakshilaDamsak/KraftBin">KraftBin</a> userstyle.
+</h4>
 <p align="center">
-This is a Personal customization of <a href="https://userstyles.world/user/NeighborlyFedora">NeighborlyFedora</a>'s  <a href="https://userstyles.world/style/10478/idkbin">Idkbin</a> userstyle for match it with my <a href="https://github.com/ThakshilaDamsak/KraftBin">KraftBin</a> userstyle.
+This fixes some issues that occur when using both styles simultaneously and adds some additional toggles.
 </p>
 <p align="center">
   <a href="https://raw.githubusercontent.com/ThakshilaDamsak/IDKraftBin/main/IDKraftBin.user.css">
@@ -13,7 +16,7 @@ This is a Personal customization of <a href="https://userstyles.world/user/Neigh
 #
 <p align="center">
 <i>
-If you want the full experience of this userstyle, install the original NeighborlyFedora's userstyle.
+If you want the original userstyle or if you dont use KraftBin userstyle, install the original NeighborlyFedora's userstyle below.
 </i>
  </p>
 <p align="center">
