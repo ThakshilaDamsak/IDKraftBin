@@ -16,7 +16,7 @@ This fixes some issues that occur when using both styles simultaneously and adds
 #
 <p align="center">
 <i>
-If you want the original userstyle or if you dont use KraftBin userstyle, install the original NeighborlyFedora's userstyle below.
+If you want the original userstyle or you are not using the KraftBin userstyle, install the original NeighborlyFedora's userstyle below.
 </i>
  </p>
 <p align="center">
