@@ -2,7 +2,7 @@
 
 @name           IDKraftBin
 @namespace      github.com/openstyles/stylus
-@version        1.4-1.2.2
+@version        1.5-1.2.2
 @description    A Customized version of NeighborlyFedora's idkbin style.
 @author         Thakshila Damsak
 @homepageURL    https://github.com/ThakshilaDamsak/IDKraftBin
@@ -50,9 +50,9 @@
 @var color opUsernameHoverColor "Username OP Hover Color"   "#9844fc"
 
 @var checkbox colorSubscribe   "Color Clicked Subscribe Button"       1
-@var color subscribeColor      "Clicked Subscribe Color"       "#c869e2"
-@var color subscribeHoverColor "Clicked Subscribe Hover Color" "#9844fc"
-@var color subscribeTextColor  "Clicked Subscribe Text Color"  "#ffffff"
+@var color subscribeTextColor  "Clicked Subscribe Text Color"  "#c869e2"
+@var color subscribeTextHoverColor  "Hovered Subscribe Text Color"  "#9844fc"
+
 
 @var checkbox colorBlock   "Color Clicked Block Button"       1
 @var color blockColor      "Clicked Block Color"       "#de0b2b"
@@ -94,9 +94,8 @@
         --op-username-color: opUsernameColor;
         --op-username-hover-color: opUsernameHoverColor;
         
-        --subscribe-color: subscribeColor;
-        --subscribe-hover-color: subscribeHoverColor;
         --subscribe-text-color: subscribeTextColor;
+		--subscribe-text-hover-color: subscribeTextHoverColor;
         
         --block-color: blockColor;
         --block-hover-color: blockHoverColor;
@@ -228,13 +227,12 @@
     if(colorSubscribe){
         
         .magazine__subscribe form[name="magazine_subscribe"] .btn.active {
-            background-color: var(--subscribe-color);
             color: var(--subscribe-text-color) !important;
-            border: none;
         }
         
         .magazine__subscribe form[name="magazine_subscribe"] .btn.active:hover {
-            background-color: var(--subscribe-hover-color);
+            color: var(--subscribe-text-hover-color) !important;
+			
         }
         
     }
