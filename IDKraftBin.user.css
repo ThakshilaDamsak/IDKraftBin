@@ -2,7 +2,7 @@
 
 @name           IDKraftBin
 @namespace      github.com/openstyles/stylus
-@version        1.5-1.2.2
+@version        1.6-1.2.2
 @description    A Customized version of NeighborlyFedora's idkbin style.
 @author         Thakshila Damsak
 @homepageURL    https://github.com/ThakshilaDamsak/IDKraftBin
@@ -330,7 +330,7 @@ if(voteRecolors)   {
 
         .entry:has(i.fa-thumbtack) + div.js-container > div.preview {
             border: .1rem solid var(--pin-color);
-            border-top: none;
+            border-top: none !important;
         }
         
     }
@@ -368,6 +368,7 @@ if(voteRecolors)   {
         min-width: var(--min-image-width);
         object-fit: contain;
         margin: auto !important;
+		border-radius:0px !important;
     }
 	
     
@@ -387,7 +388,7 @@ if(voteRecolors)   {
     }
     
     .entry + div.js-container > div.preview{
-        background-color: var(--kbin-section-bg);
+        background-color: #cfcfcf1f;
         border: var(--kbin-section-border) !important;
         border-top: none !important;
         margin-top: -0.5rem;
